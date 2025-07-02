@@ -1,5 +1,5 @@
 # Projeto
-Alguns dos meus rascunhos do site Codepen (https://codepen.io/your-work)
+Alguns dos meus rascunhos do site Codepen [https://codepen.io/TheNasc]
 
 # Tecnologias
 - HTML/CSS/JS
