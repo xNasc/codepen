@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  
+    <style>
+        body{
+			background-color:#000;
+			}
+		
+		.container{
+			margin-top:100px;
+			}
+			
+		header{
+			top:0;
+			margin-top:-90px;
+			padding:40px;
+			box-sizing: border-box;
+			text-align:center;
+			color:#fff;
+			}	
+			
+			
+		p{
+			margin-top:10px;
+			line-height:34px;
+			color:#fff;
+			font-weight:bold;
+			}
+    </style>
+
+</head>
+<body>
+	
+	<div class="container">
+		<header>
+			<h1>Texto que escreve sozinho</h1>
+		</header>
+		
+		
+		<main>
+			<p>O Lorem Ipsum é um texto modelo da indústria 
+			tipográfica e de impressão. O Lorem Ipsum tem vindo 
+			a ser o texto padrão usado por estas indústrias desde
+			 o ano de 1500, quando uma misturou os caracteres de 
+			 um texto para criar um espécime de livro. Este texto 
+			 não só sobreviveu 5 séculos, mas também o salto para 
+			 a tipografia electrónica, mantendo-se essencialmente
+			  inalterada. Foi popularizada nos anos 60 com a 
+			  disponibilização das folhas de Letraset, que 
+			  continham passagens com Lorem Ipsum, e mais 
+			  recentemente com os programas de publicação 
+			  como o Aldus PageMaker que incluem versões do Lorem 
+			  Ipsum.</p>
+		</main>
+	</div>
+	
+    <script>
+        function typeWriter(elemento){
+			const textoArray = elemento.innerHTML.split('');
+			elemento.innerHTML = '';
+			textoArray.forEach((letra, i) => {
+				setTimeout(() => elemento.innerHTML += letra, 75 * i)
+				});
+			}
+		
+		const titulo = document.querySelector('p');
+		typeWriter(titulo);
+
+    </script>
+
+
+</body>
+</html>

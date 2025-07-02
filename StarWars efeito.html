@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Intro Star Wars</title>
+	<meta charset="utf-8">
+	<style>
+            body{
+                  background: url('https://wallpapers.com/images/hd/star-wars-space-background-1920-x-1080-f1o3qr8zm0z4662c.jpg');
+            }
+            section{
+                display: flex;
+                justify-content: center;
+                position: relative;
+                height: 100vh;
+                color: #fff;
+                font-family: 'Pathway Gothic One', sans-serif;
+                font-size:500%;
+                font-weight:600;
+                letter-spacing:6px;
+                line-height:150%;
+                perspective:400px;
+                text-align:center;
+            }		
+            .text-container{
+                position:relative;
+                transform-origin: 50% 100%;
+                animation: starWars 50s linear;
+            
+            }
+            @keyframes starWars{
+                0%{
+                    top: 0;
+                    trasnform: rotateX(20deg)  translateZ(0);
+                    }
+                100%{
+                    top:-7000px;
+                    transform: rotateX(25deg) translateZ(-2500px);
+                    }	
+            }
+            h1,h5{
+                text-align: center;
+                }
+	</style>
+</head>
+<body>
+	<div class="fade"></div>
+	<section>
+		<div class="text-container">
+			<div class="intro">
+				<h5>Episodio 9</h5>
+				<h1>Star Wars</h1>
+			</div>
+			
+			<div class="text">
+				<p>O Lorem Ipsum é um texto modelo da indústria tipográfica 
+					e de impressão. O Lorem Ipsum tem vindo a ser o texto
+					 padrão usado por estas indústrias desde o ano de 1500,
+					  quando uma misturou os caracteres de um texto para 
+					  criar um espécime de livro</p>
+			</div>
+		</div>
+	</section>
+	
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+			body {
+			height: 100vh;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(to right, #02d6fc, #3288f8);
+			font-family: 'Kanit', Verdana, Arial, sans-serif;
+			}
+
+			* { box-sizing: border-box; }
+
+			#container {
+			width: 70vw;
+			}
+
+			h1 {
+			color: #fff;
+			font-size: 35px;
+			width: 100%;
+			margin-bottom: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			}
+
+			#text {
+			display: block;
+			width: 100%;
+			background-color: transparent;
+			color: #fff;
+			border: 2px solid #21B5F3;
+			border-radius: 2px;
+			resize: none;
+			margin-bottom: 20px;
+			height: 200px;
+			padding: 10px;
+			font-size: 20px;
+			}
+
+			#filename {
+			width: calc(100% - 200px);
+			border: 2px solid #C5356B;
+			border-radius: 2px;
+			background-color: transparent;
+			color: #fff;
+			padding: 0 10px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 20px;
+			margin-right: 20px;
+			}
+
+			#download {
+			background-color: #18BEFC;
+			color: #fff;
+			font-size: 20px;
+			height: 50px;
+			border: none;
+			border-radius: 2px;
+			width: 174px;
+			cursor: pointer;
+			}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+	  <h1>Salve o texto em um txt.</h1>
+	  <textarea placeholder="Escreva seu texto aqui..." id="text"></textarea>
+	  <input id="filename" placeholder="Coloque o nome do seu arquivo" />
+	  <button id="download">Download arquivo</button>
+	</div>
+
+	<script>
+		function downloadFile(filename, content) {
+  const element = document.createElement('a');
+  const blob = new Blob([content], { type: 'plain/text' });
+  
+  // Ele pode ter um valor diferente, com base no arquivo que você deseja salvar
+  const fileUrl = URL.createObjectURL(blob);
+  element.setAttribute('href', fileUrl);
+  element.setAttribute('download', filename);
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+};
+
+window.onload = () => {
+  document.getElementById('download')
+    .addEventListener('click', (e) => {
+      const filename = document.getElementById('filename').value;
+      const content = document.getElementById('text').value;
+      if (filename && content) {
+        downloadFile(filename, content);
+      }
+    });
+}
+	</script>
+	
+</body>
+</html>
